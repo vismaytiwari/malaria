@@ -6,3 +6,4 @@
  Pillow==6.1.0 
  tensorflow==2.0.0 
  Werkzeug==0.16.0 
+ gunicorn
