@@ -35,6 +35,7 @@ def upload():
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(basepath, '/uploads', secure_filename(f.filename))
         f.save(file_path)
+        return str1
         pred = model_predict(file_path, model)
         str1 = 'Malaria Parasitized'
         str2 = 'Normal'
