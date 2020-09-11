@@ -1,4 +1,4 @@
-﻿from __future__ import division, print_function
+from __future__ import division, print_function
 import sys
 import os
 import glob
@@ -20,8 +20,6 @@ def model_predict(img_path, model):
     # Preprocessing the image
     img = image.img_to_array(img)
     img = np.expand_dims(img, axis=0)
-
-   
     preds = model.predict(img)
     pred = np.argmax(preds,axis = 1)
     return pred
@@ -32,21 +30,12 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
-        # Get the file from post request
         f = request.files['file']
-
-        # Save the file to ./uploads
         basepath = os.path.dirname(__file__)
-        file_path = os.path.join(
-            basepath, 'uploads', secure_filename(f.filename))
+        file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
-
-        # Make prediction
         pred = model_predict(file_path, model)
-
-        # Arrange the correct return according to the model. 
-		# In this model 1 is Pneumonia and 0 is Normal.
-	str1 = 'Malaria Parasitized'
+        str1 = 'Malaria Parasitized'
         str2 = 'Normal'
         if pred[0] == 0:
             return str1
@@ -54,4 +43,4 @@ def upload():
             return str2
     return('working')
 if __name__ == '__main__':
-        app.run()
+    app.run()
