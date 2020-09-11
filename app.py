@@ -32,7 +32,8 @@ def upload():
     if request.method == 'POST':
         f = request.files['file']
         basepath = os.path.dirname(__file__)
-        file_path = os.path.join(basepath, 'static/uploads', secure_filename(f.filename))
+        #file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
+        file_path = join(dirname(realpath(__file__)), 'static/uploads/..')
         f.save(file_path)
         pred = model_predict(file_path, model)
         str1 = 'Malaria Parasitized'
