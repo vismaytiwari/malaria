@@ -69,7 +69,7 @@ def upload():
 
         # Arrange the correct return according to the model. 
 		# In this model 1 is Pneumonia and 0 is Normal.
-        str3=  'i do work'
+        str3 = 'i do work'
 	str1 = 'Malaria Parasitized'
         str2 = 'Normal'
         if pred[0] == 0:
