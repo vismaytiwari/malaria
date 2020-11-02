@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
 <body>
-This web application is based on a 3-layer convolutional neural network (CNN), trained to recognise malaria parasite from human blood sample. The neural network achieved accuracy exceeding 95% on the relevant test set of more than 2700 blood sample images. Please note that the predictive accuracy of the model, depends on the quality and quantity of the training data. Therefore the model has limitations and cannot be used for definite clinical predictions! Instead it can be used for research and comparison purposes (please see notes below).
+This web application is based on a 9-layer convolutional neural network (CNN), trained to recognise Pneumonia  in human lungs. The neural network achieved accuracy exceeding 95% on the relevant test set of more than 125000 x-ray. Please note that the predictive accuracy of the model, depends on the quality and quantity of the training data. Therefore the model has limitations and cannot be used for definite clinical predictions! Instead it can be used for research and comparison purposes (please see notes below).
 </body>
 
 <h2></h2>
@@ -34,7 +34,7 @@ This web application is based on a 3-layer convolutional neural network (CNN), t
 <body>
 NOTES
 <ul>
-<li>This deep learning model has been trained and validated, using the following dataset: <a href="https://ceb.nlm.nih.gov/repositories/malaria-datasets/">National Library of Medicine</a></li>
+<li>This deep learning model has been trained and validated, using the following dataset: <a href="https://www.kaggle.com/nih-chest-xrays/data">National Institute of Health</a></li>
 <li><b style="color:red;">The suitability of this deep learning model for clinical use has not been validated. Therefore it cannot be used for any clinical purpose! It can be used for research purposes and for comparison with other similar models.</b></li>
 </ul>
 </body>
